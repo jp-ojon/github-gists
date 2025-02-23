@@ -38,7 +38,7 @@ export default defineConfig({
     navigationTimeout: 15000, // Timeout for navigation (e.g., page.goto())
     headless: false,
     //viewport: { width: 1280, height: 720 },
-    ignoreHTTPSErrors: true,
+    ignoreHTTPSErrors: true, //For testing sites with invalid SSL certificates.
     launchOptions: {
       slowMo: 50, // Slow down by 50 milliseconds
     },
@@ -59,6 +59,7 @@ export default defineConfig({
       use: {
         storageState: 'auth.json',
         ...devices['Desktop Chrome'],
+        //viewport: { width: 1280, height: 720 },      
       },
       testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
       
@@ -68,6 +69,7 @@ export default defineConfig({
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
+        //viewport: { width: 1280, height: 720 },
       },
       testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
     },
@@ -76,6 +78,7 @@ export default defineConfig({
       name: 'webkit',
       use: {
         ...devices['Desktop Safari'],
+        //viewport: { width: 1280, height: 720 },
       },
       testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
     },

@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'          
 
 /**
- * Utility function to read a JSON file, default folder path "root folder of playwright project"/testdata
+ * Utility function to read a JSON file, default folder path "root folder of playwright project"/test-data
  * @param filename 
  * @returns 
  */
@@ -22,6 +22,11 @@ export async function readJSONTestData(filename: string) {
     }
 }
 
+/**
+ * Utility function to read a sample API response in a JSON file, default folder path "root folder of playwright project"/api-responses
+ * @param filename 
+ * @returns 
+ */
 export async function readJSONAPIResponseSample(filename: string) {
     try {
         // Construct the path to the testdata folder

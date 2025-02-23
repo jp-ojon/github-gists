@@ -2,6 +2,13 @@
 ## Overview
 This test suite includes UI and API automated tests for Creating and Viewing Gists on Github
 
+## Getting started
+This is a NodeJS-based project. In order to run it, you'll need following tools installed:
+
+- NodeJS (latest LTS version recommended)
+- Git
+- An IDE of your choice (Recommendation: VSCode)
+
 ## Author
 Jon Paulo Ojon
 
@@ -23,8 +30,10 @@ Jon Paulo Ojon
 * dotenv
 
 ## Test Data
-- Please update the testdata.csv file under testdata folder accordingly. 
-- Test can also be used for verification of first esim package of any country name with only a single word
+- Please update the following files accordingly.
+- api-responses/get-listofgists-sample.json file, perform a "List gists for the authenticated user" and replace with the results of the response body.
+- api-responses/get--gist-sample-otheruser.json file, perform a "Get a Gist" (Public or Secret) on any known Gist of another user other than your own.
+- test-data/test-data-file.json, update accordingly. First two rows should be happy path valid inputs and no complex scenarios involved.
 
 ## Running Tests
 Use the following commands in any terminal or cmd line to run tests in different browsers:
@@ -42,7 +51,7 @@ Configuration can be changed under playwright.config.ts
 - projects: use: viewport   : Screen size, adjust accordingly
 
 ## Recommendations
-- **Note:** It is not recommended to use npx run test:all and run all tests across all browsers in parallel. Please run test for chromium, firefox and webkit separately to avoid flakiness, inconsistent browser behaviours, insufficient resources to support the run, etc.
+- **Note:** It is not recommended to use npx run test:all and run all tests across all browsers in parallel. Please run test for chromium, firefox and webkit separately to avoid flakiness, problems with shared authentication cookies, inconsistent browser behaviours, insufficient resources to support the run, etc.
 - **Resource Management:** Consider running tests in individual browsers to manage resources effectively and reduce flakiness.
 - **Debugging:** If encountering issues, review logs and screenshots to diagnose problems. Adjust test cases if needed to handle browser-specific behaviors.
 
