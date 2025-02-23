@@ -35,7 +35,6 @@ test.describe('GitHub GET/View Gist/s API', () => {
 		expect(Array.isArray(responseBody)).toBeTruthy(); // Get List of Gists, returns an array of gists
 		expect(responseBody.length).toBeGreaterThan(0); // Ensure it's not empty
 
-
 		//Assert important attributes and properties to ensure that the profile accessed is correct
 		const gist = responseBody[rowNumber];
 		const sampleGist = responseSample[rowNumber];

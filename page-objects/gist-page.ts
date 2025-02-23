@@ -15,6 +15,11 @@ export class GistPage {
         this.editButton = this.page.locator('span.Button-label',{ hasText: 'Edit' }); // expected to return multiple elements based on number of files
     }
 
+    /**
+     * ID Attribute of file is dynamic based on the file name.
+     * @param dynamicId 
+     * @returns element locator
+     */
     async getDynamicElementContent(dynamicId: string) {
         // Convert filename to lowercase, replace '.' with '-', and add 'file-' and '-readme'
         const formattedId = `file-${dynamicId.toLowerCase().replace('.', '-')}`;

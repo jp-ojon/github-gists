@@ -9,3 +9,7 @@ node_modules/
 # dotenv environment variables file
 .env
 .env.test
+
+#stored cookies and tokens
+auth.json
+github-api-token.json

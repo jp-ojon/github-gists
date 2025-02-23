@@ -1,4 +1,4 @@
-# Playwright Test Suite for UI and API Automation Tests exercise by Jon Paulo Ojon
+# Playwright Test Suite for UI and API Automation Tests exercise for Github Gists by Jon Paulo Ojon
 ## Overview
 This test suite includes UI and API automated tests for Creating and Viewing Gists on Github
 
@@ -11,7 +11,7 @@ Jon Paulo Ojon
 
 ## Installation
 1. Clone the repository and go to project directory
-- git clone ???
+- git clone https://github.com/jp-ojon/github-gists.git
 - change directory to root folder github-gists
 
 2. Install the dependencies:
@@ -22,16 +22,15 @@ Jon Paulo Ojon
 * Playwright
 * dotenv
 
-
 ## Test Data
 - Please update the testdata.csv file under testdata folder accordingly. 
 - Test can also be used for verification of first esim package of any country name with only a single word
 
 ## Running Tests
 Use the following commands in any terminal or cmd line to run tests in different browsers:
-1. npm run test:chromium    : run all UI tests for chromium browser only
-2. npm run test:firefox     : run all UI tests for firefox browser only
-3. npm run test:webkit      : run all UI tests for webkit browser only
+1. npm run test:chromium    : run all UI tests for chromium browser only, set to serial and will run 1 by 1 because of login cookies.
+2. npm run test:firefox     : run all UI tests for firefox browser only, set to serial and will run 1 by 1 because of login cookies.
+3. npm run test:webkit      : run all UI tests for webkit browser only, set to serial and will run 1 by 1 because of login cookies.
 4. npm run test:api         : run all API tests only
 5. npm run test:all         : run all tests across all browsers configured under playwright.config.ts -> projects (Not recommended)
 

@@ -2,7 +2,7 @@ import { request, APIRequestContext, BrowserContext } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-const AUTH_STATE_FILE = path.join(__dirname, 'github-cookies.json');
+const AUTH_STATE_FILE = path.join(__dirname, 'github-api-token.json');
 
 export async function authenticateAndStoreAuthState(token: string) {
     const apiContext: APIRequestContext = await request.newContext();
@@ -16,7 +16,7 @@ export async function authenticateAndStoreAuthState(token: string) {
     if (!response.ok()) {
         throw new Error(`GitHub authentication failed: ${response.status()} ${response.statusText()}`);
     }
-    console.log('GitHub authentication successful.');
+    console.log('GitHub API authentication successful.');
     
     const userData = await response.json();
     console.log(userData);

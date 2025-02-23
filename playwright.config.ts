@@ -60,7 +60,7 @@ export default defineConfig({
         storageState: 'auth.json',
         ...devices['Desktop Chrome'],
       },
-      testIgnore: [apiTestPattern], // Ignore API tests
+      testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
       
     },
 
@@ -69,7 +69,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Firefox'],
       },
-      testIgnore: [apiTestPattern], // Ignore API tests
+      testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
     },
 
     {
@@ -77,7 +77,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Safari'],
       },
-      testIgnore: [apiTestPattern], // Ignore API tests
+      testIgnore: [apiTestPattern], // Ignore API tests under tests/api folder
     },
 
     /* Test against mobile viewports. */

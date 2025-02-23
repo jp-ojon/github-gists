@@ -50,6 +50,9 @@ export class MainPage {
         await this.page.waitForLoadState('load');
     }
 
+    /**
+     * Note: Delay added to ensure that entered field values/state changes are detected properly before redirecting to another screen.
+     */
     async clickCreateGistButton() {
         await this.createGistButton.click({delay: 1000});
         await this.page.waitForLoadState('load');
