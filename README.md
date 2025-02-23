@@ -50,6 +50,9 @@ Configuration can be changed under playwright.config.ts
 - expect: timeout           : Timeout for expect() assertions
 - projects: use: viewport   : Screen size, adjust accordingly
 
+## Environment .env file
+- A .env.example file is provided as guide for what is needed for the tests to run, create a .env file and copy the contents from the example and then update accordingly.
+
 ## Recommendations
 - **Note:** It is not recommended to use npx run test:all and run all tests across all browsers in parallel. Please run test for chromium, firefox and webkit separately to avoid flakiness, problems with shared authentication cookies, inconsistent browser behaviours, insufficient resources to support the run, etc.
 - **Resource Management:** Consider running tests in individual browsers to manage resources effectively and reduce flakiness.
