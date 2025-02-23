@@ -1,0 +1,23 @@
+{
+  "name": "github-gists",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:chromium": "npx playwright test --project=chromium --workers=1",
+    "test:firefox": "npx playwright test --project=firefox --workers=1",
+    "test:webkit": "npx playwright test --project=webkit --workers=1",
+    "test:api": "npx playwright test --project=api-tests",
+    "test:all": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
