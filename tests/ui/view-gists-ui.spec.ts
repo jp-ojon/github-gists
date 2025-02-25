@@ -69,6 +69,43 @@ test.describe('Get/View Gist/s Tests', () => {
         await expect(pom.gistPage.gistName).toBeVisible();
     });
 
-    //#3. View any Public Gist
-    //#4. View any Secret Gist using a known URL
+    //#3. View any Public Gist of other users
+    test.fixme('Test #3: View any Public Gist - Happy Path', async () => {
+        const pom = new PageObjectsManager(page);
+    });
+
+    test('Test #4: View any Secret Gist of other users using a known URL - Happy Path', async () => {
+        const pom = new PageObjectsManager(page);
+
+        //Navigate to any Secret Gist where URL/link is known
+        //Ex: https://gist.github.com/jp-ojon-test/d81890e31abe42c0477c33ad5bc83803
+        await page.goto('https://gist.github.com/jp-ojon-test/d81890e31abe42c0477c33ad5bc83803');
+
+        //Assert attributes are present on the Gist view page
+        //Assert that Gist is Secret
+        await expect(pom.gistPage.secretSpan).toBeVisible();
+        await expect(pom.gistPage.secretSpan).toHaveText('Secret');
+        await expect(pom.gistPage.fileNames).toBeVisible();
+        await expect(pom.gistPage.gistName).toBeVisible();
+    });
+
+    test('Test #5: View a invalid or deleted Gist ID - Happy Path', async () => {
+        let statusCode: number | null = null;
+
+        // Listen for the specific API response
+        page.on('response', async (response) => {
+            if (response.url().includes('https://gist.github.com/jp-ojon-test/1234abc')) {
+                console.log(`Response URL: ${response.url()}`);
+                console.log(`Status Code: ${response.status()}`);
+                statusCode = response.status();
+            }
+        });
+
+        //Navigate to any invalid or deleted Gist ID
+        await page.goto('https://gist.github.com/jp-ojon-test/1234abc');
+
+        // Assert status code 404 Not found
+        expect(statusCode).toBe(404);
+
+    });
 });
